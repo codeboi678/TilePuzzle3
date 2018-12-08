@@ -36,10 +36,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        blackSpot = b[thisGame.getBlackPieceX()][thisGame.getBlackPieceY()];
-
-        b[0][0] = findViewById(R.id.b00);
+        /*b[0][0] = findViewById(R.id.b00);
         b[0][0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,22 +50,24 @@ public class MainActivity extends AppCompatActivity {
                 }
 
             }
-        });
+        });*/
+        b[3][3] = findViewById(R.id.b33);
         b[3][2] = findViewById(R.id.b32);
         b[3][2].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                blackSpot = b[thisGame.getBlackPieceX()][thisGame.getBlackPieceY()];
-                if (thisGame.switchTile(3,2)) {
-                    blackSpot.setText(thisGame.getBoardAt(3,2));
-                    //blackSpot.setBackgroundColor(Color.WHITE);
+                if (thisGame.canSwitchTile(3,2)) {
                     b[3][2].setText("0");
-                    //b[3][2].setBackgroundColor(Color.RED);
-                    //blackSpot = b[3][2];
+                    b[3][2].setBackgroundColor(Color.RED);
+                    int bx = thisGame.getBlackPieceX();
+                    int by = thisGame.getBlackPieceY();
+                    b[bx][by].setBackgroundColor(Color.WHITE);
+                    //b[bx][by].setText((char) thisGame.switchTile(3, 2));
                 }
 
             }
         });
+
         /*b01 = findViewById(R.id.b01);
         b01.setOnClickListener(new View.OnClickListener() {
             @Override
