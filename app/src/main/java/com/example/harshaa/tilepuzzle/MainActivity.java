@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    Button b00;
+    /*Button b00;
     Button b01;
     Button b02;
     Button b03;
@@ -22,8 +22,14 @@ public class MainActivity extends AppCompatActivity {
     Button b30;
     Button b31;
     Button b32;
-    Button b33;
+    Button b33;*/
+    Button[][] b = new Button[4][4];
     Button newGame;
+    Button blackSpot;
+
+    TilePuzzle thisGame = new TilePuzzle();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,16 +37,39 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+        blackSpot = b[thisGame.getBlackPieceX()][thisGame.getBlackPieceY()];
 
-        b00 = findViewById(R.id.b00);
-        b00.setOnClickListener(new View.OnClickListener() {
+        b[0][0] = findViewById(R.id.b00);
+        b[0][0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                b00.setText("1");
-                b00.setBackgroundColor(Color.RED);
+                blackSpot = b[thisGame.getBlackPieceX()][thisGame.getBlackPieceY()];
+                if (thisGame.switchTile(0,0)) {
+                    blackSpot.setText((char) thisGame.getBoardAt(0,0));
+                    blackSpot.setBackgroundColor(Color.WHITE);
+                    b[0][0].setText("0");
+                    b[0][0].setBackgroundColor(Color.RED);
+                    blackSpot = b[0][0];
+                }
+
             }
         });
-        b01 = findViewById(R.id.b01);
+        b[3][2] = findViewById(R.id.b32);
+        b[3][2].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                blackSpot = b[thisGame.getBlackPieceX()][thisGame.getBlackPieceY()];
+                if (thisGame.switchTile(3,2)) {
+                    blackSpot.setText(thisGame.getBoardAt(3,2));
+                    //blackSpot.setBackgroundColor(Color.WHITE);
+                    b[3][2].setText("0");
+                    //b[3][2].setBackgroundColor(Color.RED);
+                    //blackSpot = b[3][2];
+                }
+
+            }
+        });
+        /*b01 = findViewById(R.id.b01);
         b01.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -198,6 +227,6 @@ public class MainActivity extends AppCompatActivity {
                 b32.setText("0");
                 b33.setText("0");
             }
-        });
+        });*/
     }
 }
