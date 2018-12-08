@@ -31,19 +31,12 @@ public class TilePuzzle {
 
     }
     public int switchTile(int x, int y) {
-        if (board[x][y] == 0) {
-            return board[x][y];
-        }
-        if (Math.abs(x - blackPiece[0]) + Math.abs(y - blackPiece[1]) > 1) {
-            return board[x][y];
-        } else {
-            int trans = board[x][y];
-            board[x][y] = 0;
-            board[blackPiece[0]][blackPiece[1]] = trans;
-            blackPiece[0] = x;
-            blackPiece[1] = y;
-            return trans;
-        }
+        int trans = board[x][y];
+        board[x][y] = 0;
+        board[blackPiece[0]][blackPiece[1]] = trans;
+        blackPiece[0] = x;
+        blackPiece[1] = y;
+        return trans;
     }
     public int getBoardAt(int x, int y) {
         return board[x][y];

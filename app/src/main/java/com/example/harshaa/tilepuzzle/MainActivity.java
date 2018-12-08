@@ -62,7 +62,8 @@ public class MainActivity extends AppCompatActivity {
                     int bx = thisGame.getBlackPieceX();
                     int by = thisGame.getBlackPieceY();
                     b[bx][by].setBackgroundColor(Color.WHITE);
-                    //b[bx][by].setText((char) thisGame.switchTile(3, 2));
+                    //b[bx][by].setText(Integer.toString(3));
+                    b[bx][by].setText(Integer.toString(thisGame.switchTile(3, 2)));
                 }
 
             }
