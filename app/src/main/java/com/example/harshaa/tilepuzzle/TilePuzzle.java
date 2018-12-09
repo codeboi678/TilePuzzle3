@@ -101,4 +101,5 @@ public class TilePuzzle {
         }
         return numInversions % 2 == 0;
     }
+
 }

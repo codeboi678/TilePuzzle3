@@ -165,4 +165,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/b31" />
 
+    <EditText
+        android:id="@+id/winText"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginLeft="150dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="You Won!!"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/b30" />
+
 </android.support.constraint.ConstraintLayout>
