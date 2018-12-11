@@ -9,6 +9,7 @@ public class TilePuzzle {
     private int numbertile = 15;
     int[] tiles = new int[16];
     private Random myst = new Random();
+    private int[][] checkBoard = new int[len][len];
 
     public TilePuzzle() {
         initializeBoard();
@@ -93,9 +94,17 @@ public class TilePuzzle {
     }
 
     public boolean check() {
+        int f = 1;
+        for (int a = 0; a < board.length; a++) {
+            for (int b = 0; b < board[a].length; b++) {
+                checkBoard[a][b] = f;
+                f++;
+            }
+        }
+        checkBoard[3][3] = 0;
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[i].length; j++) {
-                if (board[i][j] != (i * len) + j + 1 && i != 3 && j != 3) {
+                if (board[i][j] != checkBoard[i][j]) {
                     return false;
                 }
             }

@@ -48,9 +48,8 @@ public class MainActivity extends AppCompatActivity {
                 b[i][j].setBackgroundColor(Color.WHITE);
             }
         }
-        b[3][3].setText(Integer.toString(0));
         b[3][3].setBackgroundColor(Color.BLACK);
-        b[3][3].setTextColor(Color.WHITE);
+        b[3][3].setTextColor(Color.BLACK);
 
         b[0][0].setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 if (thisGame.canSwitchTile(0,0)) {
                     //winText.setVisibility(View.VISIBLE);
                     b[0][0].setText("0");
-                    b[0][0].setTextColor(Color.WHITE);
+                    b[0][0].setTextColor(Color.BLACK);
                     b[0][0].setBackgroundColor(Color.BLACK);
                     int bx = thisGame.getBlackPieceX();
                     int by = thisGame.getBlackPieceY();
@@ -76,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (thisGame.canSwitchTile(0,1)) {
                     b[0][1].setText("0");
-                    b[0][1].setTextColor(Color.WHITE);
+                    b[0][1].setTextColor(Color.BLACK);
                     b[0][1].setBackgroundColor(Color.BLACK);
                     int bx = thisGame.getBlackPieceX();
                     int by = thisGame.getBlackPieceY();
@@ -94,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (thisGame.canSwitchTile(0,2)) {
                     b[0][2].setText("0");
-                    b[0][2].setTextColor(Color.WHITE);
+                    b[0][2].setTextColor(Color.BLACK);
                     b[0][2].setBackgroundColor(Color.BLACK);
                     int bx = thisGame.getBlackPieceX();
                     int by = thisGame.getBlackPieceY();
@@ -112,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (thisGame.canSwitchTile(0,3)) {
                     b[0][3].setText("0");
-                    b[0][3].setTextColor(Color.WHITE);
+                    b[0][3].setTextColor(Color.BLACK);
                     b[0][3].setBackgroundColor(Color.BLACK);
                     int bx = thisGame.getBlackPieceX();
                     int by = thisGame.getBlackPieceY();
@@ -129,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (thisGame.canSwitchTile(1,0)) {
                     b[1][0].setText("0");
-                    b[1][0].setTextColor(Color.WHITE);
+                    b[1][0].setTextColor(Color.BLACK);
                     b[1][0].setBackgroundColor(Color.BLACK);
                     int bx = thisGame.getBlackPieceX();
                     int by = thisGame.getBlackPieceY();
@@ -146,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (thisGame.canSwitchTile(1,1)) {
                     b[1][1].setText("0");
-                    b[1][1].setTextColor(Color.WHITE);
+                    b[1][1].setTextColor(Color.BLACK);
                     b[1][1].setBackgroundColor(Color.BLACK);
                     int bx = thisGame.getBlackPieceX();
                     int by = thisGame.getBlackPieceY();
@@ -164,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (thisGame.canSwitchTile(1,2)) {
                     b[1][2].setText("0");
-                    b[1][2].setTextColor(Color.WHITE);
+                    b[1][2].setTextColor(Color.BLACK);
                     b[1][2].setBackgroundColor(Color.BLACK);
                     int bx = thisGame.getBlackPieceX();
                     int by = thisGame.getBlackPieceY();
@@ -181,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (thisGame.canSwitchTile(1,3)) {
                     b[1][3].setText("0");
-                    b[1][3].setTextColor(Color.WHITE);
+                    b[1][3].setTextColor(Color.BLACK);
                     b[1][3].setBackgroundColor(Color.BLACK);
                     int bx = thisGame.getBlackPieceX();
                     int by = thisGame.getBlackPieceY();
@@ -199,7 +198,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (thisGame.canSwitchTile(2,0)) {
                     b[2][0].setText("0");
-                    b[2][0].setTextColor(Color.WHITE);
+                    b[2][0].setTextColor(Color.BLACK);
                     b[2][0].setBackgroundColor(Color.BLACK);
                     int bx = thisGame.getBlackPieceX();
                     int by = thisGame.getBlackPieceY();
@@ -217,7 +216,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (thisGame.canSwitchTile(2,1)) {
                     b[2][1].setText("0");
-                    b[2][1].setTextColor(Color.WHITE);
+                    b[2][1].setTextColor(Color.BLACK);
                     b[2][1].setBackgroundColor(Color.BLACK);
                     int bx = thisGame.getBlackPieceX();
                     int by = thisGame.getBlackPieceY();
@@ -235,7 +234,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (thisGame.canSwitchTile(2,2)) {
                     b[2][2].setText("0");
-                    b[2][2].setTextColor(Color.WHITE);
+                    b[2][2].setTextColor(Color.BLACK);
                     b[2][2].setBackgroundColor(Color.BLACK);
                     int bx = thisGame.getBlackPieceX();
                     int by = thisGame.getBlackPieceY();
@@ -253,7 +252,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (thisGame.canSwitchTile(2,3)) {
                     b[2][3].setText("0");
-                    b[2][3].setTextColor(Color.WHITE);
+                    b[2][3].setTextColor(Color.BLACK);
                     b[2][3].setBackgroundColor(Color.BLACK);
                     int bx = thisGame.getBlackPieceX();
                     int by = thisGame.getBlackPieceY();
@@ -270,7 +269,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (thisGame.canSwitchTile(3,0)) {
                     b[3][0].setText("0");
-                    b[3][0].setTextColor(Color.WHITE);
+                    b[3][0].setTextColor(Color.BLACK);
                     b[3][0].setBackgroundColor(Color.BLACK);
                     int bx = thisGame.getBlackPieceX();
                     int by = thisGame.getBlackPieceY();
@@ -288,7 +287,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (thisGame.canSwitchTile(3,1)) {
                     b[3][1].setText("0");
-                    b[3][1].setTextColor(Color.WHITE);
+                    b[3][1].setTextColor(Color.BLACK);
                     b[3][1].setBackgroundColor(Color.BLACK);
                     int bx = thisGame.getBlackPieceX();
                     int by = thisGame.getBlackPieceY();
@@ -305,7 +304,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (thisGame.canSwitchTile(3,2)) {
                     b[3][2].setText("0");
-                    b[3][2].setTextColor(Color.WHITE);
+                    b[3][2].setTextColor(Color.BLACK);
                     b[3][2].setBackgroundColor(Color.BLACK);
                     int bx = thisGame.getBlackPieceX();
                     int by = thisGame.getBlackPieceY();
@@ -322,7 +321,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (thisGame.canSwitchTile(3,3)) {
                     b[3][3].setText("0");
-                    b[3][3].setTextColor(Color.WHITE);
+                    b[3][3].setTextColor(Color.BLACK);
                     b[3][3].setBackgroundColor(Color.BLACK);
                     int bx = thisGame.getBlackPieceX();
                     int by = thisGame.getBlackPieceY();
@@ -352,7 +351,6 @@ public class MainActivity extends AppCompatActivity {
                         b[i][j].setBackgroundColor(Color.WHITE);
                     }
                 }
-                b[3][3].setText(Integer.toString(0));
                 b[3][3].setBackgroundColor(Color.BLACK);
                 winText.setVisibility(View.INVISIBLE);
             }
