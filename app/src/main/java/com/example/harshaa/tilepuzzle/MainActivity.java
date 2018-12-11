@@ -12,8 +12,7 @@ import org.w3c.dom.Text;
 public class MainActivity extends AppCompatActivity {
     Button[][] b = new Button[4][4];
     Button newGame;
-    TextView winText = new TextView(this);
-
+    TextView winText;
     TilePuzzle thisGame = new TilePuzzle();
 
 
@@ -39,15 +38,14 @@ public class MainActivity extends AppCompatActivity {
         b[3][1] = findViewById(R.id.b31);
         b[3][2] = findViewById(R.id.b32);
         b[3][3] = findViewById(R.id.b33);
-        winText = findViewById(R.id.winText);
-        winText.setTextColor(Color.WHITE);
+        newGame = findViewById(R.id.newGame);
 
 
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
+        for (int i = 0; i < b.length; i++) {
+            for (int j = 0; j < b[i].length; j++) {
+                b[i][j].setTextSize(25);
                 b[i][j].setText(Integer.toString(thisGame.getBoardAt(i, j)));
                 b[i][j].setBackgroundColor(Color.WHITE);
-                b[i][j].setTextSize(25);
             }
         }
         b[3][3].setText(Integer.toString(0));
@@ -58,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (thisGame.canSwitchTile(0,0)) {
+                    //winText.setVisibility(View.VISIBLE);
                     b[0][0].setText("0");
                     b[0][0].setTextColor(Color.WHITE);
                     b[0][0].setBackgroundColor(Color.BLACK);
@@ -66,9 +65,6 @@ public class MainActivity extends AppCompatActivity {
                     b[bx][by].setBackgroundColor(Color.WHITE);
                     b[bx][by].setTextColor(Color.BLACK);
                     b[bx][by].setText(Integer.toString(thisGame.switchTile(0, 0)));
-                    if (thisGame.check()) {
-                        winText.setTextColor(Color.BLACK);
-                    }
                 }
 
             }
@@ -333,18 +329,32 @@ public class MainActivity extends AppCompatActivity {
                     b[bx][by].setBackgroundColor(Color.WHITE);
                     b[bx][by].setTextColor(Color.BLACK);
                     b[bx][by].setText(Integer.toString(thisGame.switchTile(3, 3)));
+                    winText = (TextView) findViewById(R.id.winText);
+                    winText.setTextSize(40);
+                    winText.setVisibility(View.INVISIBLE);
+                    winText.setText("You Won!!!");
+                    if (thisGame.check()) {
+                        winText.setVisibility(View.VISIBLE);
+                    }
                 }
 
             }
         });
 
-
-        newGame = findViewById(R.id.newGame);
         newGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 thisGame = new TilePuzzle();
-                winText.setTextColor(Color.WHITE);
+                for (int i = 0; i < b.length; i++) {
+                    for (int j = 0; j < b[i].length; j++) {
+                        b[i][j].setTextSize(25);
+                        b[i][j].setText(Integer.toString(thisGame.getBoardAt(i, j)));
+                        b[i][j].setBackgroundColor(Color.WHITE);
+                    }
+                }
+                b[3][3].setText(Integer.toString(0));
+                b[3][3].setBackgroundColor(Color.BLACK);
+                winText.setVisibility(View.INVISIBLE);
             }
         });
 

@@ -80,16 +80,6 @@ public class TilePuzzle {
             }
         }
     }
-    public boolean check() {
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[i].length; j++) {
-                if (board[i][j] != (i * len) + j) {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
     public boolean isValid() {
         int numInversions = 0;
         for (int i = 0; i < tiles.length - 1; i++) {
@@ -100,6 +90,17 @@ public class TilePuzzle {
             }
         }
         return numInversions % 2 == 0;
+    }
+
+    public boolean check() {
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
+                if (board[i][j] != (i * len) + j + 1 && i != 3 && j != 3) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
 }
